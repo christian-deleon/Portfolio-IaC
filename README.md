@@ -18,11 +18,11 @@ Frontend Repository: https://github.com/christian-deleon/portfolio
 
 ## Infrastructures
 
-### AWS CDK - Serverless Architecture ( The active infrastructure )
+### AWS - Terraform - Serverless Architecture ( The active infrastructure )
 
-Repository: https://github.com/christian-deleon/portfolio-iac-aws-cdk
+Repository: https://github.com/christian-deleon/portfolio-iac-terraform
 
-Using AWS CDK ( Cloud Development Kit ) with a serverless architecture I have created a very simple application that consists of the following AWS resources:
+Using Terraform with a serverless architecture I have created a very simple application that consists of the following AWS resources:
 
 - `AWS S3` as the backend server
 - `AWS CloudFront` as the CDN ( Content Delivery Network )
@@ -30,6 +30,12 @@ Using AWS CDK ( Cloud Development Kit ) with a serverless architecture I have cr
 - `AWS CodePipeline` for the CI/CD ( Continuous Integration and Continuous Delivery )
 - `AWS CodeBuild` which takes changes from the respective GitHub repository and builds the React application
 - `AWS CodeDeploy` to deploy the application to the AWS S3 bucket running as the application backend
+
+### AWS CDK - Serverless Architecture
+
+Repository: https://github.com/christian-deleon/portfolio-iac-aws-cdk
+
+Using the same serverless architecture as above with Terraform, I've used AWS CDK ( Cloud Development Kit ) to deploy and manage this infrastructure.
 
 ### AWS CDK - Using ECS Fargate
 
@@ -46,8 +52,3 @@ Using AWS CDK ( Cloud Development Kit ) with AWS ECS Fargate running the web ser
 - `AWS CodeBuild` which takes changes from the respective GitHub repository and builds the React application image using Docker and updates or stores it in `AWS ECR`
 - `AWS Lambda` that updates the AWS ECS cluster service with the updated Docker image from ECR
 - `AWS EventBridge` which triggers the above Lambda function when a successful push has been made to the main region ECR repository
-
-## Upcoming infrastructures
-
-- Terraform - Serverless Architecture
-- Terraform - Using ECS Fargate
